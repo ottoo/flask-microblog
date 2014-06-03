@@ -9,10 +9,11 @@ app = Flask(__name__)
 def shutdown_session(exception=None):
     db_session.remove()
 
-# Main route
+# Loads the front page and the posts from db
 @app.route('/')
-def hello_world():
-    return 'Hello World!'
+def mainpage():
+    posts = Post.query.all()
+    return render_template('posts.html', posts=posts)
 
 # Searches topics
 @app.route('/search')
@@ -40,7 +41,7 @@ def getposts():
     return render_template('posts.html', posts=posts)
 
 # Gets a specific post
-@app.route('/posts/<postid>', methods=['GET'])
+@app.route('/posts/<postid>')
 def getpost(postid):
     post = Post.query.get(postid)
     return render_template('post.html', post=post)

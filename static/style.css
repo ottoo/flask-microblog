@@ -1,0 +1,71 @@
+body {
+    background: url('wild_oliva.png') repeat;
+    color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+}
+
+#container {
+    width: 50%;
+    min-height: 600px;
+    border: 1px groove whitesmoke;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    margin: 50px auto;
+}
+
+#navcontainer {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px dashed whitesmoke;
+}
+
+#nav {
+    margin-left: 150px;
+}
+
+#nav a {
+    text-decoration: none;
+    color: chocolate;
+}
+
+#nav a:hover {
+    color: whitesmoke;
+}
+
+#nav li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+#postscontainer {
+    width: 100%;
+    min-height: 550px;
+    /*border: 1px solid blue;*/
+}
+
+.singlepost {
+    width: 100%;
+    min-height: 100px;
+    padding-bottom: 15px;
+    padding-top: 12px;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.singlepostheader {
+    width: 100%;
+    padding-left: 40px;
+}
+
+.singlepostcontent {
+    width: 100%;
+    padding-left: 40px;
+}
+
+.singlepost a {
+    color: darkorange;
+}

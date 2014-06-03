@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ post.title }}</title>
-</head>
-<body>
-    {{ post.content }}
-</body>
-</html>
+{% extends "main.html" %}
+{% block content %}
+       <div class="singlepost">
+            <div class="singlepostheader">
+                <h2>{{ post.title }}</h2>
+            </div>
+            <div class="singlepostcontent">
+                {{ post.content }}
+            </div>
+       </div>
+{% endblock %}
