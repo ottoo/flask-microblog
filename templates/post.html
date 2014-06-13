@@ -1,8 +1,13 @@
 {% extends "main.html" %}
 {% block content %}
-       <div class="singlepost">
+       <div class="singlepost-noborder">
             <div class="singlepostheader">
-                <h2>{{ post.title }}</h2>
+                <table class="header-table">
+                    <tr>
+                        <td><h2 class="post-title">{{ post.title }}</h2></td>
+                        <td class="datecell">{{ post.date }}</td>
+                    </tr>
+                </table>
             </div>
             <div class="singlepostcontent">
                 {{ post.content }}

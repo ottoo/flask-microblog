@@ -4,7 +4,12 @@
     {% for post in posts %}
         <div class="singlepost">
             <div class="singlepostheader">
-                <h2><a href="posts/{{ post.id }}">{{ post.title }}</a></h2>
+                <table class="header-table">
+                    <tr>
+                        <td><h2><a href="posts/{{ post.id }}">{{ post.title }}</a></h2></td>
+                        <td class="datecell">{{ post.date }}</td>
+                    </tr>
+                </table>
             </div>
             <div class="singlepostcontent">
                 {{ post.content }}
