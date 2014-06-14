@@ -1,6 +1,8 @@
+from flask.ext.login import unicode
 from sqlalchemy import Column, Integer, String, DateTime
 from datetime import datetime
 from database import Base
+from passlib.apps import custom_app_context
 
 class Post(Base):
     __tablename__ = 'posts'
@@ -24,12 +26,27 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     username = Column(String(50), unique=True)
     email = Column(String(120), unique=True)
-    password = Column(String(30))
+    password = Column(String(128))
 
     def __init__(self, username, email, password):
         self.username = username
         self.email = email
-        self.password = password
+        self.password = custom_app_context.encrypt(password)
+
+    def verify_password(self, password):
+        return custom_app_context.verify(password, self.password)
+
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):
+        return True
+
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return unicode(self.id)
 
     def __repr__(self):
         return '<User %r>' % self.username
