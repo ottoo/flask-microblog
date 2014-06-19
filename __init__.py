@@ -31,6 +31,11 @@ def mainpage():
 def admin():
     return render_template('admin.html')
 
+# About page
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 # Searches topics
 @app.route('/search')
 def search():
@@ -84,6 +89,9 @@ def login():
         login_user(user)
         flash("Logged in")
         return redirect(url_for('admin'))
+    else:
+        flash('Login failed')
+        return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Admin</title>
-</head>
-<body>
-    Admin
-</body>
-</html>
+{% extends "main.html" %}
+{% block content %}
+<section id="admin-sect">
+    <nav id="admin-nav">
+        <h2>Admin menu</h2>
+        <ul >
+            <li>Create new post</li>
+            <li>Delete a post</li>
+            <li>Edit a post</li>
+        </ul>
+    </nav>
+</section>
+{% endblock %}
