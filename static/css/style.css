@@ -44,7 +44,7 @@ a {
 #main-nav {
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
+    width: 370px;
 }
 
 #main-nav li {
@@ -199,3 +199,28 @@ a {
 #contact-list li {
     list-style-type: none;
 }
+
+/* Create post section */
+
+#createpost-sect {
+    width: 100%;
+    min-height: 250px;
+    padding-bottom: 40px;
+}
+
+#newpost-form {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 150px;
+}
+#title {
+    width: 352px;
+    margin-bottom: 5px;
+}
+
+#content {
+    width: 350px;
+}
+

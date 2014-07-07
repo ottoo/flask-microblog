@@ -75,6 +75,23 @@ def insertuser():
     db_session.commit()
     return render_template('search.html')
 
+@app.route('/admin/newpost', methods=['GET'])
+@login_required
+# Create new post form
+def newpost():
+    return render_template('createpost.html')
+
+@app.route('/admin/create', methods=['POST'])
+@login_required
+# Create a new post
+def create_post():
+    title = request.form['title']
+    content = request.form['content']
+    post = Post(title, content)
+    db_session.add(post)
+    db_session.commit()
+    return redirect(url_for('admin'))
+
 # Login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -92,6 +109,13 @@ def login():
     else:
         flash('Login failed')
         return redirect(url_for('login'))
+
+# Logout
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('mainpage'))
 
 if __name__ == '__main__':
     app.run(debug=True)
